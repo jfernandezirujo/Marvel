@@ -61,7 +61,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
-                                                    <action selector="LogIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="2lY-sQ-5kt"/>
+                                                    <action selector="logIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="aFd-oj-Jp3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mby-7Z-L4J">
@@ -69,7 +69,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
-                                                    <action selector="SignUp" destination="BYZ-38-t0r" eventType="touchUpInside" id="TdG-JC-QL3"/>
+                                                    <action selector="signUp" destination="BYZ-38-t0r" eventType="touchUpInside" id="TGP-t2-RGk"/>
                                                 </connections>
                                             </button>
                                         </subviews>

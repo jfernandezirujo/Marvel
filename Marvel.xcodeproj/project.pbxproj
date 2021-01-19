@@ -11,6 +11,7 @@
 		6117A2A048CBB1E664726427 /* Pods_MarvelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772F2E15B43CE733FBF52DA4 /* Pods_MarvelTests.framework */; };
 		D93F743225B71C6700171211 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F743125B71C6700171211 /* NavigationHelper.swift */; };
 		D93F743425B7215000171211 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F743325B7215000171211 /* UIViewController+Extension.swift */; };
+		D93F743625B7254200171211 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F743525B7254200171211 /* PersistenceManager.swift */; };
 		D9F136F425B622980073008F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F136F325B622980073008F /* AppDelegate.swift */; };
 		D9F136F625B622980073008F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F136F525B622980073008F /* SceneDelegate.swift */; };
 		D9F136FB25B622980073008F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F136F925B622980073008F /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		D7C304D0116B15C9667A0E4F /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
 		D93F743125B71C6700171211 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		D93F743325B7215000171211 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		D93F743525B7254200171211 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		D9F136F025B622980073008F /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F136F325B622980073008F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F136F525B622980073008F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				D9F1370125B6229F0073008F /* Info.plist */,
 				D93F743125B71C6700171211 /* NavigationHelper.swift */,
 				D93F743325B7215000171211 /* UIViewController+Extension.swift */,
+				D93F743525B7254200171211 /* PersistenceManager.swift */,
 			);
 			path = Marvel;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				D93F743225B71C6700171211 /* NavigationHelper.swift in Sources */,
 				D9F136F425B622980073008F /* AppDelegate.swift in Sources */,
 				D9F136F625B622980073008F /* SceneDelegate.swift in Sources */,
+				D93F743625B7254200171211 /* PersistenceManager.swift in Sources */,
 				D9F1371E25B64FB10073008F /* TabBarViewController.swift in Sources */,
 				D9F1371C25B64F4D0073008F /* EventsViewController.swift in Sources */,
 			);

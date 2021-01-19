@@ -43,6 +43,11 @@ class AuthenticationViewController: UIViewController {
         btnSignUp.layer.cornerRadius = 6
     }
     
+    func showHome() {
+        PersistenceManager.shared.logIn()
+        NavigationHelper.changeRoot(authenticated: true)
+    }
+    
     @IBAction func logIn() {
             if let email = txtFieldEmail.text, let password = txtFieldPassword.text {
                 
@@ -53,7 +58,7 @@ class AuthenticationViewController: UIViewController {
                     }
                     
                     else if let result = result {
-                        NavigationHelper.changeRoot(authenticated: true)
+                        self.showHome()
                     }
                 })
             }
@@ -70,9 +75,7 @@ class AuthenticationViewController: UIViewController {
                 }
                 
                 else if let result = result {
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "events") as! EventsViewController
-                    
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.showHome()
                 }
             })
         }

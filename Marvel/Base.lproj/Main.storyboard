@@ -137,7 +137,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="tab" id="F4Q-wI-uIr" customClass="TabBarViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="gt3-Gc-6kl"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="cal" id="tgu-ZL-Nr7">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tgu-ZL-Nr7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,7 +152,4 @@
             <point key="canvasLocation" x="829" y="122"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="cal" width="16" height="16"/>
-    </resources>
 </document>

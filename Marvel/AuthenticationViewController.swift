@@ -28,8 +28,9 @@ class AuthenticationViewController: UIViewController {
         
         txtFieldEmail.placeholder = "Email"
         txtFieldEmail.keyboardType = .emailAddress
-        
         txtFieldPassword.placeholder = "Contraseña"
+        txtFieldEmail.delegate = self
+        txtFieldPassword.delegate = self
         
         btnLogIn.setTitle("Iniciar Sesión", for: .normal)
         btnLogIn.backgroundColor = UIColor(displayP3Red: 38 / 255, green: 38 / 255 , blue: 38 / 255, alpha: 1)
@@ -43,12 +44,54 @@ class AuthenticationViewController: UIViewController {
     }
     
     @IBAction func LogIn() {
-        
-    }
+            if let email = txtFieldEmail.text, let password = txtFieldPassword.text {
+                
+                Auth.auth().signIn(withEmail: email, password: password, completion: { result, error in
+                    
+                    if let error = error {
+                        let alert = UIAlertController(title: "Error al iniciar sesión", message: nil, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: nil))
+                        
+                        self.present(alert, animated: true)
+                    }
+                    
+                    else if let result = result {
+                        self.navigationController?.pushViewController(CharactersViewController(), animated: true)
+                    }
+                })
+            }
+            
+        }
+
     
     @IBAction func SignUp() {
+        if let email = txtFieldEmail.text, let password = txtFieldPassword.text {
+            
+            Auth.auth().createUser(withEmail: email, password: password, completion: { result, error in
+                
+                if let error = error {
+                    let alert = UIAlertController(title: "Error al registrarse", message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: nil))
+                    
+                    self.present(alert, animated: true)
+                }
+                
+                else if let result = result {
+                    self.navigationController?.pushViewController(CharactersViewController(), animated: true)
+                }
+            })
+        }
+        
         
     }
     
 
+}
+
+extension AuthenticationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }

@@ -41,9 +41,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="PCY-Zh-jm8"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Aj-Uu-Rvh">
                                         <rect key="frame" x="0.0" y="59" width="382" height="40"/>
@@ -106,7 +103,7 @@
         <!--Item 2-->
         <scene sceneID="LWx-9j-PpN">
             <objects>
-                <viewController id="8gQ-H2-Wuw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="events" id="8gQ-H2-Wuw" customClass="EventsViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FCR-ji-ou7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,7 +119,7 @@
         <!--Item 1-->
         <scene sceneID="YGl-j3-7Jj">
             <objects>
-                <viewController id="yD1-we-Cqi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="characters" id="yD1-we-Cqi" customClass="CharactersViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DtC-wf-ADW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

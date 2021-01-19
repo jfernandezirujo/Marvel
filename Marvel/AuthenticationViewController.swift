@@ -43,41 +43,36 @@ class AuthenticationViewController: UIViewController {
         btnSignUp.layer.cornerRadius = 6
     }
     
-    @IBAction func LogIn() {
+    @IBAction func logIn() {
             if let email = txtFieldEmail.text, let password = txtFieldPassword.text {
                 
                 Auth.auth().signIn(withEmail: email, password: password, completion: { result, error in
                     
                     if let error = error {
-                        let alert = UIAlertController(title: "Error al iniciar sesión", message: nil, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: nil))
-                        
-                        self.present(alert, animated: true)
+                        self.showAlert(title: "Error", msg: "Error al iniciar sesión")
                     }
                     
                     else if let result = result {
-                        self.navigationController?.pushViewController(CharactersViewController(), animated: true)
+                        NavigationHelper.changeRoot(authenticated: true)
                     }
                 })
             }
-            
         }
 
     
-    @IBAction func SignUp() {
+    @IBAction func signUp() {
         if let email = txtFieldEmail.text, let password = txtFieldPassword.text {
             
             Auth.auth().createUser(withEmail: email, password: password, completion: { result, error in
                 
                 if let error = error {
-                    let alert = UIAlertController(title: "Error al registrarse", message: nil, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: nil))
-                    
-                    self.present(alert, animated: true)
+                    self.showAlert(title: "Error", msg: "Error al registrarse")
                 }
                 
                 else if let result = result {
-                    self.navigationController?.pushViewController(CharactersViewController(), animated: true)
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "events") as! EventsViewController
+                    
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
             })
         }

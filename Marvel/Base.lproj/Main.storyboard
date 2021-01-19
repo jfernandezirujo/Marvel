@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGc-rS-kgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="412"/>
+            <point key="canvasLocation" x="2686" y="405"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="YGl-j3-7Jj">
@@ -130,13 +130,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WhF-Ja-oY9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="-235"/>
+            <point key="canvasLocation" x="2686" y="-264"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="QAh-0w-gOO">
             <objects>
-                <tabBarController id="F4Q-wI-uIr" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tgu-ZL-Nr7">
+                <tabBarController storyboardIdentifier="tab" id="F4Q-wI-uIr" customClass="TabBarViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gt3-Gc-6kl"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="cal" id="tgu-ZL-Nr7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -148,7 +149,10 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B6h-dF-EaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864" y="122"/>
+            <point key="canvasLocation" x="829" y="122"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cal" width="16" height="16"/>
+    </resources>
 </document>

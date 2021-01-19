@@ -13,6 +13,8 @@
 		D93F743425B7215000171211 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F743325B7215000171211 /* UIViewController+Extension.swift */; };
 		D93F743625B7254200171211 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F743525B7254200171211 /* PersistenceManager.swift */; };
 		D93F743825B73C0200171211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93F743725B73C0200171211 /* Assets.xcassets */; };
+		D93F743A25B7477200171211 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F743925B7477200171211 /* NetworkManager.swift */; };
+		D93F743E25B75E1D00171211 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F743D25B75E1D00171211 /* Character.swift */; };
 		D9F136F425B622980073008F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F136F325B622980073008F /* AppDelegate.swift */; };
 		D9F136F625B622980073008F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F136F525B622980073008F /* SceneDelegate.swift */; };
 		D9F136FB25B622980073008F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F136F925B622980073008F /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		D93F743325B7215000171211 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D93F743525B7254200171211 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		D93F743725B73C0200171211 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D93F743925B7477200171211 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D93F743D25B75E1D00171211 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		D9F136F025B622980073008F /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F136F325B622980073008F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F136F525B622980073008F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,8 +134,10 @@
 				D9F1371725B634DD0073008F /* AuthenticationViewController.swift */,
 				D9F1371D25B64FB10073008F /* TabBarViewController.swift */,
 				D9F1371925B64F2A0073008F /* CharactersViewController.swift */,
+				D93F743D25B75E1D00171211 /* Character.swift */,
 				D9F1371B25B64F4D0073008F /* EventsViewController.swift */,
 				D9F136F925B622980073008F /* Main.storyboard */,
+				D93F743925B7477200171211 /* NetworkManager.swift */,
 				D9F136F325B622980073008F /* AppDelegate.swift */,
 				D9F136F525B622980073008F /* SceneDelegate.swift */,
 				D9F136FE25B6229F0073008F /* LaunchScreen.storyboard */,
@@ -323,6 +329,8 @@
 			files = (
 				D93F743425B7215000171211 /* UIViewController+Extension.swift in Sources */,
 				D9F1371A25B64F2A0073008F /* CharactersViewController.swift in Sources */,
+				D93F743E25B75E1D00171211 /* Character.swift in Sources */,
+				D93F743A25B7477200171211 /* NetworkManager.swift in Sources */,
 				D9F1371825B634DD0073008F /* AuthenticationViewController.swift in Sources */,
 				D93F743225B71C6700171211 /* NavigationHelper.swift in Sources */,
 				D9F136F425B622980073008F /* AppDelegate.swift in Sources */,

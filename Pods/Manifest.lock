@@ -1,4 +1,6 @@
 PODS:
+  - Alamofire (5.4.1)
+  - CryptoKit (0.4.0)
   - Firebase/Analytics (7.4.0):
     - Firebase/Core
   - Firebase/Auth (7.4.0):
@@ -71,13 +73,19 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - CryptoKit
   - Firebase/Analytics
   - Firebase/Auth
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - CryptoKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -90,8 +98,11 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
     - PromisesObjC
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  CryptoKit: 778b0eb14434535f70fd1037b297841dd83e3c37
   Firebase: 09fb40287b6dfc8ee65f726fa0b788719d3f2a07
   FirebaseAnalytics: adb3c8f02f83d00661cdaac6dbb4d54e9720d1b6
   FirebaseAuth: d8dba8db90a1705ee2493857047282ca4f6e7598
@@ -104,7 +115,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 56a7d2d94ec01e47dcdcba5d72d24f50551050ed
+PODFILE CHECKSUM: 0305453c8e6c995a6024becd3bf242198eeaedba
 
 COCOAPODS: 1.8.4

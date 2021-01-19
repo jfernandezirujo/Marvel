@@ -9,6 +9,9 @@ target 'Marvel' do
 
 pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
+pod 'Alamofire', '~> 5.2'
+pod 'CryptoKit'
+pod 'SwiftyJSON', '~> 4.0'
 
   target 'MarvelTests' do
     inherit! :search_paths

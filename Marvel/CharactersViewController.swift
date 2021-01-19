@@ -13,7 +13,17 @@ class CharactersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        NetworkManager.shared.getCharacters(completionHandler: { characters, error in
+            
+            if let error = error {
+                print(error)
+            }
+            
+            else{
+                print(characters)
+            }
+           
+        })
     }
     
 

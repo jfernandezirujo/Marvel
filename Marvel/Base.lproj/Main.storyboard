@@ -58,7 +58,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="bcd-ha-AfE"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="logIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="aFd-oj-Jp3"/>

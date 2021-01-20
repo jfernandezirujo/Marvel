@@ -8,33 +8,71 @@
 
 import UIKit
 
+
 class CharactersViewController: UIViewController {
 
+    @IBOutlet var table: UITableView!
+    
+    var arrayCharacters: [Character] = [] {
+        didSet {
+        table.reloadData()
+    }}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+        getCharacters()
+        table.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+    }
 
+    
+    func configureUI() {
+        view.backgroundColor = .veryLightGray
+        table.backgroundColor = .veryLightGray
+    }
+    
+    
+    func getCharacters() {
         NetworkManager.shared.getCharacters(completionHandler: { characters, error in
             
             if let error = error {
                 print(error)
             }
             
-            else{
-                print(characters)
+            else {
+                self.arrayCharacters = characters
             }
-           
         })
     }
+}
+
+extension CharactersViewController: UITableViewDelegate, UITableViewDataSource {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell: CharacterTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CharacterTableViewCell else { return UITableViewCell() }
+        
+        cell.configureCell(character: arrayCharacters[indexPath.section])
+        
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return arrayCharacters.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        var view = UIView()
+        view.backgroundColor = .clear
+        
+        return view
+    }
 }

@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="eW0-ky-AYo">
@@ -39,7 +44,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="reW-UE-PoJ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Aj-Uu-Rvh">
@@ -47,7 +52,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Vx0-t8-ULk"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WY9-x9-ipX">
@@ -58,7 +63,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="bcd-ha-AfE"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="logIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="aFd-oj-Jp3"/>
@@ -66,7 +71,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mby-7Z-L4J">
                                                 <rect key="frame" x="195" y="0.0" width="187" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="signUp" destination="BYZ-38-t0r" eventType="touchUpInside" id="TGP-t2-RGk"/>
@@ -114,7 +119,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGc-rS-kgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2686" y="405"/>
+            <point key="canvasLocation" x="1942" y="479"/>
+        </scene>
+        <!--Character Detail View Controller-->
+        <scene sceneID="iei-4Y-yQk">
+            <objects>
+                <viewController storyboardIdentifier="details" id="Y6l-wV-jSS" customClass="CharacterDetailViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1mC-Gc-HdL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="x78-7u-9Z3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O2g-pJ-4ON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2868" y="145"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="YGl-j3-7Jj">
@@ -123,14 +143,33 @@
                     <view key="view" contentMode="scaleToFill" id="DtC-wf-ADW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JdW-bA-vU2">
+                                <rect key="frame" x="10" y="54" width="394" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="yD1-we-Cqi" id="alA-OK-9jr"/>
+                                    <outlet property="delegate" destination="yD1-we-Cqi" id="xcg-k5-hie"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JdW-bA-vU2" firstAttribute="top" secondItem="21n-1c-XyY" secondAttribute="top" constant="10" id="GpJ-BA-D0k"/>
+                            <constraint firstAttribute="trailing" secondItem="JdW-bA-vU2" secondAttribute="trailing" constant="10" id="lpF-ru-mcP"/>
+                            <constraint firstItem="JdW-bA-vU2" firstAttribute="bottom" secondItem="21n-1c-XyY" secondAttribute="bottom" constant="10" id="y6d-1f-bnD"/>
+                            <constraint firstItem="JdW-bA-vU2" firstAttribute="leading" secondItem="21n-1c-XyY" secondAttribute="leading" constant="10" id="zVr-en-6mi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="21n-1c-XyY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="ioS-I2-FP0"/>
+                    <connections>
+                        <outlet property="table" destination="JdW-bA-vU2" id="KjY-9i-FdQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WhF-Ja-oY9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2686" y="-264"/>
+            <point key="canvasLocation" x="1943" y="-221"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="QAh-0w-gOO">

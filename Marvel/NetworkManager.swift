@@ -33,7 +33,6 @@ class NetworkManager {
     
     func getCharacters(completionHandler: @escaping (_ characters: [Character], _ error: Error?) -> Void) {
         let url = getUrl(path: "v1/public/characters")
-        
         AF.request(url).validate().responseJSON(completionHandler: { response in
             
             if let error = response.error {

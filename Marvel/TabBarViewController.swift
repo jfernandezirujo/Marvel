@@ -12,13 +12,11 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureItems()
     }
     
 
     func configureItems() {
-        
         tabBar.frame.size.height = 56.0
         
         tabBar.items?[0].title = "Personajes"
@@ -28,6 +26,5 @@ class TabBarViewController: UITabBarController {
         tabBar.items?[1].title = "Eventos"
         tabBar.items?[1].image = UIImage(named: "calendarGray")
         tabBar.items?[1].selectedImage = UIImage(named: "calendarYellow")
-
     }
 }

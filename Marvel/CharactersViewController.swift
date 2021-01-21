@@ -23,10 +23,13 @@ class CharactersViewController: UIViewController {
         configureUI()
         getCharacters()
         table.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        table.delegate = self
+       
     }
 
     
     func configureUI() {
+        title = "Personajes"
         view.backgroundColor = .veryLightGray
         table.backgroundColor = .veryLightGray
     }
@@ -75,4 +78,16 @@ extension CharactersViewController: UITableViewDelegate, UITableViewDataSource {
         
         return view
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "details") as? CharacterDetailViewController else { return }
+        
+        vc.character = arrayCharacters[indexPath.section]
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
 }

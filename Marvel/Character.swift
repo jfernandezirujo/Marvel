@@ -13,7 +13,7 @@ class Character {
     
     var name: String
     var description: String
-    var thumbnail: String = ""
+    var thumbnail: String 
     
     init(json: JSON) {
         self.name = json["name"].stringValue

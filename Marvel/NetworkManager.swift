@@ -55,4 +55,28 @@ class NetworkManager {
         
     }
     
+    func getEvents(completionHandler: @escaping (_ events: [Event], _ error: Error?) -> Void) {
+        
+        let url = getUrl(path: "/v1/public/events")
+        AF.request(url).validate().responseJSON(completionHandler: { response in
+            
+            if let error = response.error {
+                completionHandler([], error)
+            }
+            
+            else if let value = response.value {
+                var json = JSON(value)
+                var jsonEvents = json["data"]["results"].arrayValue
+                var arrayEvents: [Event] = []
+
+                for item in jsonEvents {
+                    let event = Event(json: item)
+                    arrayEvents.append(event)
+                }
+                completionHandler(arrayEvents, nil)
+            }
+        })
+        
+    }
+    
 }

@@ -16,13 +16,14 @@ class CharacterTableViewCell: UITableViewCell {
     @IBOutlet var lblDescription: UILabel!
     @IBOutlet var img: UIImageView!
     
-    var character: Character?
-    
     func configureCell(character: Character) {
-        lblName.text = character.name
+        lblName.text = character.name.uppercased()
+        lblName.configureLblTitle()
         lblDescription.text = character.description
+        lblDescription.configureLblBody()
         configureImg(characterUrl: character.thumbnail)
     }
+    
     
     func configureImg(characterUrl: String) {
         let url = URL(string: characterUrl)

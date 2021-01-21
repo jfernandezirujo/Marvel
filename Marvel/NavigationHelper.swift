@@ -16,7 +16,7 @@ class NavigationHelper {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         var rootViewControllerIdentifier: String = authenticated ? "tab" : "auth"
         let rootViewController = mainStoryboard.instantiateViewController(withIdentifier: rootViewControllerIdentifier)
-        UIApplication.shared.windows.first?.rootViewController = rootViewController
+        UIApplication.shared.windows.first?.rootViewController = UINavigationController(rootViewController: rootViewController)
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
 }

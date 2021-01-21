@@ -7,24 +7,38 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharacterDetailViewController: UIViewController {
 
+    @IBOutlet var imgCharacter: UIImageView!
+    @IBOutlet var lblDescription: UILabel!
+    @IBOutlet var lblComics: UILabel!
+    @IBOutlet var table: UITableView!
+    
+    var character: Character?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       configureUI()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureUI() {
+        guard let character = character else { return }
+        title = character.name.uppercased()
+        
+        
+        let url = URL(string: character.thumbnail)
+        imgCharacter.kf.setImage(with: url)
+        
+        lblDescription.text = character.description
+        lblDescription.configureLblBody()
+        lblComics.text = "COMICS EN LOS QUE APARECE"
+        lblComics.configureLblTitle()
+        
+        
     }
-    */
 
 }

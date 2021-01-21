@@ -36,7 +36,7 @@ class CharactersViewController: UIViewController {
     
     
     func getCharacters() {
-        NetworkManager.shared.getCharacters(completionHandler: { characters, error in
+       NetworkManager.shared.getCharacters(completionHandler: { characters, error in
             
             if let error = error {
                 print(error)

@@ -26,6 +26,7 @@ class EventsTableViewCell: UITableViewCell {
         lblEnd.configureLblBody()
         configureImg(Url: event.thumbnail)
         
+        
         imgArrow.image = UIImage(systemName: "chevron.down")
 
         
@@ -33,6 +34,7 @@ class EventsTableViewCell: UITableViewCell {
     
     func configureImg(Url: String) {
         let url = URL(string: Url)
+        imgEvent.contentMode = .scaleAspectFill
         imgEvent.kf.setImage(with: url)
         
         

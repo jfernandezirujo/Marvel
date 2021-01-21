@@ -11,6 +11,8 @@ import Kingfisher
 
 class CharacterDetailViewController: UIViewController {
 
+    @IBOutlet var tableHeight: NSLayoutConstraint!
+    
     @IBOutlet var imgCharacter: UIImageView!
     @IBOutlet var lblDescription: UILabel!
     @IBOutlet var lblComics: UILabel!
@@ -22,6 +24,10 @@ class CharacterDetailViewController: UIViewController {
         super.viewDidLoad()
 
        configureUI()
+        table.register(UINib(nibName: "ComicsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
+        table.isScrollEnabled = false
+        configureTableHeight()
     }
     
 
@@ -36,9 +42,37 @@ class CharacterDetailViewController: UIViewController {
         lblDescription.text = character.description
         lblDescription.configureLblBody()
         lblComics.text = "COMICS EN LOS QUE APARECE"
+        lblComics.font = UIFont(name: "Roboto-Condensed", size: 20)
         lblComics.configureLblTitle()
         
+        imgCharacter.contentMode = .scaleAspectFill
+    }
+    
+    func configureTableHeight() {
+        
+        tableHeight.constant = CGFloat(character!.comics.count * 88)
+     
         
     }
 
+}
+
+extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let character = character else { return 1 }
+        
+        return character.comics.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    
+        guard let cell: ComicsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ComicsTableViewCell else { return UITableViewCell() }
+        
+        cell.configureCell(comicTitle: (character?.comics[indexPath.row])!)
+
+        return cell
+    }
+    
+    
 }

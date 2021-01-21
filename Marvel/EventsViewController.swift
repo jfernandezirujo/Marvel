@@ -28,6 +28,7 @@ class EventsViewController: UIViewController {
         table.backgroundColor = .veryLightGray
     }
     
+    
     func getEvents() {
         NetworkManager.shared.getEvents(completionHandler: { events, error in
             if let error = error{

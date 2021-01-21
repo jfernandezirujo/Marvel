@@ -27,9 +27,8 @@ class CharacterTableViewCell: UITableViewCell {
     
     func configureImg(characterUrl: String) {
         let url = URL(string: characterUrl)
+        img.contentMode = .scaleAspectFill
         img.kf.setImage(with: url)
-        
-        
     }
     
 }

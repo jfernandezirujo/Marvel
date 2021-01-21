@@ -22,4 +22,10 @@ extension UILabel {
         font = UIFont(name: "Roboto-Regular", size: 14)
     }
     
+    func configureLblCellComic() {
+        textColor = .black
+        font = UIFont(name: "Roboto-Regular", size: 16)
+        
+    }
+    
 }

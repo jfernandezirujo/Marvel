@@ -35,7 +35,8 @@ class EventsViewController: UIViewController {
             }
             
             else {
-                self.arrayEvents = events
+                self.arrayEvents = events.sorted(by: { $0.startDate < $1.startDate
+                })
             }
         })
     }

@@ -13,6 +13,7 @@ extension String {
     func toDateWith(format: String) -> Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = format
+        formatter.locale = .init(identifier: "es_ES")
         return formatter.date(from: self)
     }
 }

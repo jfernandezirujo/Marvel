@@ -46,7 +46,6 @@
 		D9F136F625B622980073008F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F136F525B622980073008F /* SceneDelegate.swift */; };
 		D9F136FB25B622980073008F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F136F925B622980073008F /* Main.storyboard */; };
 		D9F1370025B6229F0073008F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F136FE25B6229F0073008F /* LaunchScreen.storyboard */; };
-		D9F1370B25B622A00073008F /* MarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F1370A25B622A00073008F /* MarvelTests.swift */; };
 		D9F1371625B626DC0073008F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9F1371525B626DC0073008F /* GoogleService-Info.plist */; };
 		D9F1371825B634DD0073008F /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F1371725B634DD0073008F /* AuthenticationViewController.swift */; };
 		D9F1371A25B64F2A0073008F /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F1371925B64F2A0073008F /* CharactersViewController.swift */; };
@@ -110,8 +109,6 @@
 		D9F136FF25B6229F0073008F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9F1370125B6229F0073008F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9F1370625B622A00073008F /* MarvelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9F1370A25B622A00073008F /* MarvelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelTests.swift; sourceTree = "<group>"; };
-		D9F1370C25B622A00073008F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9F1371525B626DC0073008F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9F1371725B634DD0073008F /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		D9F1371925B64F2A0073008F /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +182,63 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		D98893E925B8BD97008DBE80 /* Roboto */ = {
+		D9565A7925BB1E1700B4E7B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D988940825B8DD34008DBE80 /* Event.swift */,
+				D93F743D25B75E1D00171211 /* Character.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D9565A7A25BB1E3D00B4E7B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9F1371B25B64F4D0073008F /* EventsViewController.swift */,
+				D9F1371D25B64FB10073008F /* TabBarViewController.swift */,
+				D9F1371925B64F2A0073008F /* CharactersViewController.swift */,
+				D93F749225B7D6B900171211 /* CharacterDetailViewController.swift */,
+				D9F1371725B634DD0073008F /* AuthenticationViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D9565A7B25BB1EB500B4E7B8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D93F743925B7477200171211 /* NetworkManager.swift */,
+				D93F743525B7254200171211 /* PersistenceManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D9565A7C25BB1EC700B4E7B8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D93F743125B71C6700171211 /* NavigationHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D9565A7D25BB1ED800B4E7B8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D9F136F925B622980073008F /* Main.storyboard */,
+				D9F136FE25B6229F0073008F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D9565A7F25BB1F3E00B4E7B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D93F743725B73C0200171211 /* Assets.xcassets */,
+				D98893E925B8BD97008DBE80 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D98893E925B8BD97008DBE80 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				D988941025B9E34A008DBE80 /* RobotoCondensed-Bold.ttf */,
@@ -204,15 +257,13 @@
 				D98893F525B8BD97008DBE80 /* Roboto-Thin.ttf */,
 				D98893F625B8BD97008DBE80 /* Roboto-Black.ttf */,
 			);
-			path = Roboto;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		D9F136E725B622980073008F = {
 			isa = PBXGroup;
 			children = (
-				D98893E925B8BD97008DBE80 /* Roboto */,
 				D9F136F225B622980073008F /* Marvel */,
-				D9F1370925B622A00073008F /* MarvelTests */,
 				D9F136F125B622980073008F /* Products */,
 				D9F1371525B626DC0073008F /* GoogleService-Info.plist */,
 				B16B4906F1FE31FF62E2A50A /* Pods */,
@@ -232,35 +283,19 @@
 		D9F136F225B622980073008F /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
-				D93F743725B73C0200171211 /* Assets.xcassets */,
-				D9F1371725B634DD0073008F /* AuthenticationViewController.swift */,
-				D9F1371D25B64FB10073008F /* TabBarViewController.swift */,
-				D9F1371925B64F2A0073008F /* CharactersViewController.swift */,
-				D9F1371B25B64F4D0073008F /* EventsViewController.swift */,
-				D93F749225B7D6B900171211 /* CharacterDetailViewController.swift */,
-				D988940825B8DD34008DBE80 /* Event.swift */,
-				D93F743D25B75E1D00171211 /* Character.swift */,
+				D9565A7F25BB1F3E00B4E7B8 /* Resources */,
+				D9565A7925BB1E1700B4E7B8 /* Models */,
+				D9565A7A25BB1E3D00B4E7B8 /* Views */,
 				D93F749C25B87B1B00171211 /* Cell */,
-				D9F136F925B622980073008F /* Main.storyboard */,
-				D93F743925B7477200171211 /* NetworkManager.swift */,
-				D9F136F325B622980073008F /* AppDelegate.swift */,
+				D9565A7C25BB1EC700B4E7B8 /* Helpers */,
+				D9565A7B25BB1EB500B4E7B8 /* Managers */,
+				D9565A7D25BB1ED800B4E7B8 /* Storyboards */,
 				D9F136F525B622980073008F /* SceneDelegate.swift */,
-				D9F136FE25B6229F0073008F /* LaunchScreen.storyboard */,
+				D9F136F325B622980073008F /* AppDelegate.swift */,
 				D9F1370125B6229F0073008F /* Info.plist */,
-				D93F743125B71C6700171211 /* NavigationHelper.swift */,
 				D93F749725B7DFE400171211 /* Extensions */,
-				D93F743525B7254200171211 /* PersistenceManager.swift */,
 			);
 			path = Marvel;
-			sourceTree = "<group>";
-		};
-		D9F1370925B622A00073008F /* MarvelTests */ = {
-			isa = PBXGroup;
-			children = (
-				D9F1370A25B622A00073008F /* MarvelTests.swift */,
-				D9F1370C25B622A00073008F /* Info.plist */,
-			);
-			path = MarvelTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,7 +512,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F1370B25B622A00073008F /* MarvelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

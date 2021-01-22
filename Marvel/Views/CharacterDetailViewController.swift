@@ -24,10 +24,7 @@ class CharacterDetailViewController: UIViewController {
         super.viewDidLoad()
 
        configureUI()
-        table.register(UINib(nibName: "ComicsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
-        table.isScrollEnabled = false
-        configureTableHeight()
+ 
     }
     
 
@@ -46,13 +43,24 @@ class CharacterDetailViewController: UIViewController {
         lblComics.configureLblTitle()
         
         imgCharacter.contentMode = .scaleAspectFill
+        
+        table.register(UINib(nibName: "ComicsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+         
+         table.isScrollEnabled = false
+         configureTableHeight()
+         configureNavBarButton()
     }
     
     func configureTableHeight() {
         
         tableHeight.constant = CGFloat(character!.comics.count * 88)
-     
-        
+    }
+    
+    func configureNavBarButton() {
+        let backBtn = UIButton()
+        backBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        backBtn.setImage( UIImage(systemName: "xmark"), for: .normal)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
     }
 
 }

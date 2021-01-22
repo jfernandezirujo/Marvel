@@ -49,7 +49,7 @@ class EventsTableViewCell: UITableViewCell {
         
         imgArrow.image = expanded ? UIImage(systemName: "chevron.up") : UIImage(systemName: "chevron.down")
         
-        tableHeight.constant = CGFloat(expanded ? Double(event.comics.count) * 88.0 : 0.0)
+        tableHeight.constant = CGFloat(expanded ? Double(event.comics.count) * ComicsTableViewCell.cellHeight : 0.0)
         
         table.reloadData()
     }

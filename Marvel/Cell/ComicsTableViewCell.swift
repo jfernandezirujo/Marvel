@@ -10,6 +10,7 @@ import UIKit
 
 class ComicsTableViewCell: UITableViewCell {
 
+   static let cellHeight = 88.0
    @IBOutlet var lblComicTitle: UILabel!
     
     func configureCell(comicTitle: String) {

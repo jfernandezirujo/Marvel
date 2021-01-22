@@ -53,7 +53,7 @@ class CharacterDetailViewController: UIViewController {
     
     func configureTableHeight() {
         
-        tableHeight.constant = CGFloat(character!.comics.count * 88)
+        tableHeight.constant = CGFloat(Double(character?.comics.count ?? 0) * ComicsTableViewCell.cellHeight)
     }
     
     func configureNavBarButton() {

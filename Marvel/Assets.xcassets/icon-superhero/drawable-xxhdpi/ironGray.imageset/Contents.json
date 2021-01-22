@@ -2,12 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icon-calendar-disabled-1.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "icon-calendar-disabled.png",
+      "filename" : "icon-superhero.png",
       "scale" : "1x"
     },
     {

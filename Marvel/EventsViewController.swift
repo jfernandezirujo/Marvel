@@ -42,6 +42,7 @@ class EventsViewController: UIViewController {
 }
 
 extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
@@ -49,7 +50,6 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell: EventsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EventsTableViewCell else { return UITableViewCell() }
-        
         
         cell.configureCell(event: arrayEvents[indexPath.section], expanded: indexPath == expandedCell)
         
@@ -79,7 +79,6 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
         expandedCell = indexPath == expandedCell ? nil : indexPath
         if let expandedCell = expandedCell  { cellsToReload.append(expandedCell) }
         tableView.reloadRows(at: cellsToReload, with: .automatic)
-        
     }
     
     

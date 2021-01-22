@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icon-superhero.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "icon-superhero.png",
       "scale" : "2x"
     },
     {
@@ -19,6 +19,7 @@
     "author" : "xcode"
   },
   "properties" : {
-    "template-rendering-intent" : "original"
+    "template-rendering-intent" : "original",
+    "auto-scaling" : "auto"
   }
 }

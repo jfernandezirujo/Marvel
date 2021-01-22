@@ -131,7 +131,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tsB-3W-ArA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="W2o-bg-NpT"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="W2o-bg-NpT">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="table" destination="N1N-8U-dF8" id="d3D-vA-yVv"/>
                     </connections>
@@ -262,7 +264,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="21n-1c-XyY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ioS-I2-FP0"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="ioS-I2-FP0">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="table" destination="JdW-bA-vU2" id="KjY-9i-FdQ"/>
                     </connections>
@@ -276,7 +280,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="tab" id="F4Q-wI-uIr" customClass="TabBarViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="gt3-Gc-6kl"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tgu-ZL-Nr7">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="tgu-ZL-Nr7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

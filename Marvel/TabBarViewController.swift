@@ -21,13 +21,15 @@ class TabBarViewController: UITabBarController {
         tabBar.frame.size.height = 56.0
         tabBar.tintColor = .almostBlack
         
+        
+    
         tabBar.items?[0].title = "Personajes"
         tabBar.items?[0].image = UIImage(named: "ironGray")
         tabBar.items?[0].selectedImage = UIImage(named: "ironYellow")
         
         tabBar.items?[1].title = "Eventos"
         tabBar.items?[1].image = UIImage(named: "calendarGray")
-        tabBar.items?[1].selectedImage = UIImage(named: "calendarYellow")
+        tabBar.items?[1].selectedImage = UIImage(named: "icon-calendar-disabled")
        navigationItem.title = "Marvel Challenge"
     }
     

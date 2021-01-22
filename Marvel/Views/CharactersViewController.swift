@@ -14,12 +14,15 @@ class CharactersViewController: UIViewController {
     @IBOutlet var table: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
+    var offset = 0
+    
     var arrayCharacters: [Character] = [] {
         didSet {
             activityIndicator.stopAnimating()
             activityIndicator.isHidden = true
             table.isHidden = false
             table.reloadData()
+            offset = arrayCharacters.count
     }}
     
     override func viewDidLoad() {
@@ -42,14 +45,14 @@ class CharactersViewController: UIViewController {
     
     
     func getCharacters() {
-       NetworkManager.shared.getCharacters(completionHandler: { characters, error in
+        NetworkManager.shared.getCharacters(offset: offset, completionHandler: { characters, error in
             
             if let error = error {
                 self.showAlert(title: "Error", msg: error.localizedDescription)
             }
             
             else {
-                self.arrayCharacters = characters
+                self.arrayCharacters.append(contentsOf: characters)
             }
         })
     }
@@ -95,5 +98,10 @@ extension CharactersViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath == IndexPath(row: 0, section: arrayCharacters.count - 1) {
+            getCharacters()
+        }
+    }
 }

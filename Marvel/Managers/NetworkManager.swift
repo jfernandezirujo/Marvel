@@ -33,8 +33,8 @@ class NetworkManager {
         return "b9beb64bc6bc3fdbc277954ac8cb9892"
     }
     
-    func getCharacters(completionHandler: @escaping (_ characters: [Character], _ error: Error?) -> Void) {
-        let url = getUrl(path: "v1/public/characters")
+    func getCharacters(offset: Int, completionHandler: @escaping (_ characters: [Character], _ error: Error?) -> Void) {
+        let url = getUrl(path: "v1/public/characters", parameters: "limit=15&offset=\(offset)")
         AF.request(url).validate().responseJSON(completionHandler: { response in
             
             if let error = response.error {

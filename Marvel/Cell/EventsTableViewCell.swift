@@ -30,6 +30,7 @@ class EventsTableViewCell: UITableViewCell {
         lblStart.configureLblBody()
         lblEnd.configureLblBody()
         table.register(UINib(nibName: "ComicsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        table.register(UINib(nibName: "ComicHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
         table.isScrollEnabled = false
         imgEvent.contentMode = .scaleAspectFill
     }
@@ -67,6 +68,10 @@ extension EventsTableViewCell: UITableViewDelegate, UITableViewDataSource {
         return expanded ? (event?.comics.count ?? 0) : 0
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell: ComicsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ComicsTableViewCell else { return UITableViewCell() }
@@ -84,16 +89,9 @@ extension EventsTableViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let view = UIView(frame: CGRect.init(x: 0, y: 0, width: table.frame.width, height: 37))
-        view.backgroundColor = .white
-        let lbl = UILabel(frame: CGRect(x: 110, y: 28, width: 165, height: 24))
-        lbl.textAlignment = .center
-        lbl.text = "COMICS A DISCUTIR"
-        lbl.configureLblCellComic()
-        
-        view.addSubview(lbl)
-        
-              return view
+        guard let header = table.dequeueReusableHeaderFooterView(withIdentifier: "header") as? ComicHeader else { return nil }
+        header.configure(title: "COMICS A DISCUTIR")
+        return header
     }
 }
 

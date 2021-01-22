@@ -60,7 +60,13 @@ class CharacterDetailViewController: UIViewController {
         let backBtn = UIButton()
         backBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         backBtn.setImage( UIImage(systemName: "xmark"), for: .normal)
+        backBtn.addTarget(self, action: #selector(goBack) , for: .touchUpInside)
+        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
     }
 
 }

@@ -121,6 +121,10 @@
                                     <outlet property="delegate" destination="8gQ-H2-Wuw" id="a26-7D-013"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="C3Q-7G-poV">
+                                <rect key="frame" x="10" y="426" width="394" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -135,6 +139,7 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="C3Q-7G-poV" id="efx-7Y-glj"/>
                         <outlet property="table" destination="N1N-8U-dF8" id="d3D-vA-yVv"/>
                     </connections>
                 </viewController>
@@ -179,7 +184,7 @@
                                                     <constraint firstAttribute="width" secondItem="qaT-XR-7OQ" secondAttribute="height" multiplier="1:1" id="Cwc-yX-j6E"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8q-DY-Oet">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="p8q-DY-Oet">
                                                 <rect key="frame" x="53" y="502.5" width="309" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -254,6 +259,10 @@
                                     <outlet property="delegate" destination="yD1-we-Cqi" id="mWR-SQ-cRv"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="ldu-6g-qxu">
+                                <rect key="frame" x="10" y="426" width="394" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -268,6 +277,7 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="ldu-6g-qxu" id="STv-ZG-cVT"/>
                         <outlet property="table" destination="JdW-bA-vU2" id="KjY-9i-FdQ"/>
                     </connections>
                 </viewController>

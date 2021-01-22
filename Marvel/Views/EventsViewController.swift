@@ -11,13 +11,20 @@ import UIKit
 class EventsViewController: UIViewController {
     
     @IBOutlet var table: UITableView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     var arrayEvents: [Event] = [] { didSet {
-    table.reloadData()
-        }}
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        table.isHidden = false
+        table.reloadData()
+    }}
+    
     var expandedCell: IndexPath? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
         getEvents()
         configureUI()
         table.register(UINib(nibName: "EventsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -26,12 +33,14 @@ class EventsViewController: UIViewController {
     func configureUI() {
         view.backgroundColor = .veryLightGray
         table.backgroundColor = .veryLightGray
+        table.isHidden = true
     }
     
     func getEvents() {
         NetworkManager.shared.getEvents(completionHandler: { events, error in
+            
             if let error = error{
-                print(error)
+                self.showAlert(title: "Error", msg: error.localizedDescription)
             }
             
             else {

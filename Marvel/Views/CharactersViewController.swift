@@ -12,14 +12,19 @@ import UIKit
 class CharactersViewController: UIViewController {
 
     @IBOutlet var table: UITableView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     var arrayCharacters: [Character] = [] {
         didSet {
-        table.reloadData()
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+            table.isHidden = false
+            table.reloadData()
     }}
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
         configureUI()
         getCharacters()
         table.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -32,6 +37,7 @@ class CharactersViewController: UIViewController {
         title = "Personajes"
         view.backgroundColor = .veryLightGray
         table.backgroundColor = .veryLightGray
+        table.isHidden = true
     }
     
     
@@ -39,7 +45,7 @@ class CharactersViewController: UIViewController {
        NetworkManager.shared.getCharacters(completionHandler: { characters, error in
             
             if let error = error {
-                print(error)
+                self.showAlert(title: "Error", msg: error.localizedDescription)
             }
             
             else {
@@ -73,7 +79,7 @@ extension CharactersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        var view = UIView()
+        let view = UIView()
         view.backgroundColor = .clear
         
         return view

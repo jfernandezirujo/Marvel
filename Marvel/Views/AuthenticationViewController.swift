@@ -19,7 +19,6 @@ class AuthenticationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configureUI()
     }
     
@@ -52,15 +51,16 @@ class AuthenticationViewController: UIViewController {
     }
     
     @IBAction func logIn() {
-            if let email = txtFieldEmail.text, let password = txtFieldPassword.text {
+            
+        if let email = txtFieldEmail.text, let password = txtFieldPassword.text {
                 
                 Auth.auth().signIn(withEmail: email, password: password, completion: { result, error in
                     
-                    if let error = error {
+                    if let _ = error {
                         self.showAlert(title: "Error", msg: "Error al iniciar sesión")
                     }
                     
-                    else if let result = result {
+                    else if let _ = result {
                         self.showHome()
                     }
                 })

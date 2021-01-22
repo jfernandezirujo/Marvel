@@ -76,22 +76,23 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        var view = UIView()
+        let view = UIView()
         view.backgroundColor = .clear
-        
         return view
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         var cellsToReload: [IndexPath] = []
+        
         if let expandedCell = expandedCell  { cellsToReload.append(expandedCell) }
+        
         expandedCell = indexPath == expandedCell ? nil : indexPath
+        
         if let expandedCell = expandedCell  { cellsToReload.append(expandedCell) }
+        
         tableView.reloadRows(at: cellsToReload, with: .automatic)
     }
-    
-    
 }
 
 

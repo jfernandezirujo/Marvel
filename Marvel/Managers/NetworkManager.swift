@@ -20,8 +20,10 @@ class NetworkManager {
     var timeStamp: String = "1"
     
     func getUrl(path: String, parameters: String? = nil) -> String {
+        
         let host = "https://gateway.marvel.com/"
         var parametersString = "?"
+        
         if let parameters = parameters {
             parametersString.append("\(parameters)&")
         }
@@ -34,7 +36,9 @@ class NetworkManager {
     }
     
     func getCharacters(offset: Int, completionHandler: @escaping (_ characters: [Character], _ error: Error?) -> Void) {
+        
         let url = getUrl(path: "v1/public/characters", parameters: "limit=15&offset=\(offset)")
+        
         AF.request(url).validate().responseJSON(completionHandler: { response in
             
             if let error = response.error {
@@ -42,8 +46,8 @@ class NetworkManager {
             }
             
             else if let value = response.value {
-                var json = JSON(value)
-                var jsonChar = json["data"]["results"].arrayValue
+                let json = JSON(value)
+                let jsonChar = json["data"]["results"].arrayValue
                 var arrayChar: [Character] = []
                 
                 for item in jsonChar {
@@ -67,8 +71,8 @@ class NetworkManager {
             }
             
             else if let value = response.value {
-                var json = JSON(value)
-                var jsonEvents = json["data"]["results"].arrayValue
+                let json = JSON(value)
+                let jsonEvents = json["data"]["results"].arrayValue
                 var arrayEvents: [Event] = []
 
                 for item in jsonEvents {
@@ -78,7 +82,5 @@ class NetworkManager {
                 completionHandler(arrayEvents, nil)
             }
         })
-        
     }
-    
 }

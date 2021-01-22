@@ -13,9 +13,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureItems()
-    
     }
-    
 
     func configureItems() {
         tabBar.frame.size.height = 56.0

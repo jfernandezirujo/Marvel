@@ -32,7 +32,6 @@ class CharactersViewController: UIViewController {
         getCharacters()
         table.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         table.delegate = self
-       
     }
 
     

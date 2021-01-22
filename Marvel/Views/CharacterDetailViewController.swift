@@ -22,16 +22,14 @@ class CharacterDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       configureUI()
- 
+        configureUI()
     }
     
 
     func configureUI() {
+        
         guard let character = character else { return }
         title = character.name.uppercased()
-        
         
         let url = URL(string: character.thumbnail)
         imgCharacter.kf.setImage(with: url)
@@ -68,10 +66,10 @@ class CharacterDetailViewController: UIViewController {
     @objc func goBack() {
         navigationController?.popViewController(animated: true)
     }
-
 }
 
 extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let character = character else { return 1 }
         
@@ -80,7 +78,6 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-    
         guard let cell: ComicsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ComicsTableViewCell else { return UITableViewCell() }
         
         cell.configureCell(comicTitle: (character?.comics[indexPath.row])!)

@@ -33,13 +33,16 @@ class AuthenticationViewController: UIViewController {
         txtFieldPassword.delegate = self
         
         btnLogIn.setTitle("Iniciar Sesión", for: .normal)
-        btnLogIn.backgroundColor = UIColor(displayP3Red: 38 / 255, green: 38 / 255 , blue: 38 / 255, alpha: 1)
-        btnLogIn.tintColor = UIColor(displayP3Red: 237 / 255, green: 239 / 255, blue: 241 / 255 , alpha: 1)
+        btnLogIn.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 17.0)
+        btnLogIn.backgroundColor = .almostBlack
+        btnLogIn.tintColor = .white
         btnLogIn.layer.cornerRadius = 6
         
+        
         btnSignUp.setTitle("Registrarse", for: .normal)
-        btnSignUp.backgroundColor = UIColor(displayP3Red: 237 / 255, green: 239 / 255, blue: 241 / 255 , alpha: 1)
-        btnSignUp.tintColor = UIColor(displayP3Red: 38 / 255, green: 38 / 255 , blue: 38 / 255, alpha: 1)
+        btnLogIn.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 17.0)
+        btnSignUp.backgroundColor = .veryLightGray
+        btnSignUp.tintColor = .black
         btnSignUp.layer.cornerRadius = 6
     }
     

@@ -42,7 +42,7 @@ class CharacterDetailViewController: UIViewController {
         lblDescription.text = character.description
         lblDescription.configureLblBody()
         lblComics.text = "COMICS EN LOS QUE APARECE"
-        lblComics.font = UIFont(name: "Roboto-Condensed", size: 20)
+      
         lblComics.configureLblTitle()
         
         imgCharacter.contentMode = .scaleAspectFill

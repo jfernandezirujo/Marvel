@@ -17,28 +17,56 @@ class EventsTableViewCell: UITableViewCell {
     @IBOutlet var imgEvent: UIImageView!
     @IBOutlet var imgArrow: UIImageView!
     
-    func configureCell(event: Event) {
-        lbltitle.text = event.title
+    @IBOutlet var table: UITableView!
+    
+    @IBOutlet var tableHeight: NSLayoutConstraint!
+    
+    var event: Event?
+    
+    override func awakeFromNib() {
         lbltitle.configureLblTitle()
-        lblStart.text = event.start
         lblStart.configureLblBody()
-        lblEnd.text = event.end
         lblEnd.configureLblBody()
+        table.register(UINib(nibName: "ComicsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        table.register(UINib(nibName: "ComicsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        imgEvent.contentMode = .scaleAspectFill
+    }
+    
+    func configureCell(event: Event, expanded: Bool ) {
+        self.event = event
+        lbltitle.text = event.title
+        
+        lblStart.text = event.start
+        
+        lblEnd.text = event.end
+        
         configureImg(Url: event.thumbnail)
         
-        
-        imgArrow.image = UIImage(systemName: "chevron.down")
+        imgArrow.image = expanded ? UIImage(systemName: "chevron.up") : UIImage(systemName: "chevron.down")
 
-        
+        tableHeight.constant = CGFloat(expanded ? Double(event.comics.count) * 88.0 : 0.0)
     }
     
     func configureImg(Url: String) {
         let url = URL(string: Url)
-        imgEvent.contentMode = .scaleAspectFill
         imgEvent.kf.setImage(with: url)
-        
-        
     }
+    
+}
+
+extension EventsTableViewCell: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return event?.comics.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell: ComicsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ComicsTableViewCell else { return UITableViewCell() }
+        
+        cell.configureCell(comicTitle: (event?.comics[indexPath.row]) ?? "")
+
+        return cell
+    }
+    
     
 }
 

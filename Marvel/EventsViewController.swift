@@ -14,7 +14,7 @@ class EventsViewController: UIViewController {
     var arrayEvents: [Event] = [] { didSet {
     table.reloadData()
         }}
-        
+    var expandedCell: IndexPath? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,6 @@ class EventsViewController: UIViewController {
         table.backgroundColor = .veryLightGray
     }
     
-    
     func getEvents() {
         NetworkManager.shared.getEvents(completionHandler: { events, error in
             if let error = error{
@@ -38,12 +37,8 @@ class EventsViewController: UIViewController {
             else {
                 self.arrayEvents = events
             }
-            
         })
-        
     }
-    
-
 }
 
 extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -55,7 +50,8 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
         
         guard let cell: EventsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EventsTableViewCell else { return UITableViewCell() }
         
-        cell.configureCell(event: arrayEvents[indexPath.section])
+        
+        cell.configureCell(event: arrayEvents[indexPath.section], expanded: indexPath == expandedCell)
         
         return cell
         
@@ -74,6 +70,16 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
         view.backgroundColor = .clear
         
         return view
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var cellsToReload: [IndexPath] = []
+        if let expandedCell = expandedCell  { cellsToReload.append(expandedCell) }
+        expandedCell = indexPath == expandedCell ? nil : indexPath
+        if let expandedCell = expandedCell  { cellsToReload.append(expandedCell) }
+        tableView.reloadRows(at: cellsToReload, with: .automatic)
+        
     }
     
     

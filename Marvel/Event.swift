@@ -15,6 +15,7 @@ class Event {
     var start: String
     var end: String
     var thumbnail: String
+    var comics: [String] = []
     
     
     init(json: JSON) {
@@ -30,5 +31,11 @@ class Event {
         var url = "\(json["thumbnail"]["path"].stringValue).\(json["thumbnail"]["extension"].stringValue)"
         url.insert("s", at: url.index(url.startIndex, offsetBy: 4))
         self.thumbnail = url
+        
+        let comicsJson = json["comics"]["items"].arrayValue
+            
+            for comic in comicsJson {
+                comics.append(comic["name"].stringValue)
+        }
     }
 }

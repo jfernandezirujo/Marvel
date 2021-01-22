@@ -28,4 +28,9 @@ extension UILabel {
         
     }
     
+    func configureLblTitleCell() {
+        textColor = .black
+        font = UIFont(name: "Roboto-Condensed", size: 20)
+    }
+    
 }
